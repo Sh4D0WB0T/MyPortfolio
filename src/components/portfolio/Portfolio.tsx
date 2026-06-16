@@ -16,7 +16,6 @@ import {
   Sparkles,
   Atom,
   Zap,
-  Lock,
   Code2,
   GraduationCap,
   MapPin,
