@@ -336,49 +336,16 @@ const MB_COMPONENTS = [
   { icon: Cloud, name: "Cloud Engine", role: "Infrastructure", tint: "var(--sakura-pink)" },
 ];
 
-function Motherboard() {
+function AboutMe() {
   return (
     <Section
-      id="motherboard"
+      id="about"
       number="03"
-      label="Engineering Motherboard"
-      title={<>Inside the <span className="text-gradient-aurora">engineer.</span></>}
+      label="About Me"
+      title={<>About <span className="text-gradient-aurora">me.</span></>}
+      subtitle="The systems, ideas, and obsessions inside the engineer."
     >
-      <div className="grid gap-10 md:grid-cols-2">
-        <div className="relative">
-          <div className="relative aspect-square rounded-3xl glass p-6">
-            <div className="absolute inset-6 grid grid-cols-3 grid-rows-3 gap-3">
-              {MB_COMPONENTS.map((c, i) => (
-                <motion.div
-                  key={c.name}
-                  initial={{ opacity: 0, scale: 0.7 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="group relative flex flex-col items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] p-3 transition hover:border-white/40"
-                >
-                  <c.icon className="h-6 w-6" style={{ color: c.tint }} />
-                  <div className="mt-2 text-[10px] uppercase tracking-widest text-muted-foreground group-hover:text-foreground">
-                    {c.name}
-                  </div>
-                  <div
-                    className="absolute -inset-px rounded-xl opacity-0 transition group-hover:opacity-100"
-                    style={{ boxShadow: `inset 0 0 30px ${c.tint}` }}
-                  />
-                </motion.div>
-              ))}
-            </div>
-            <div
-              className="pointer-events-none absolute inset-0 rounded-3xl"
-              style={{
-                background:
-                  "radial-gradient(circle at center, rgba(125,211,252,0.08), transparent 65%)",
-              }}
-            />
-          </div>
-        </div>
-
-        <div className="space-y-6">
+        <div className="mx-auto max-w-3xl space-y-6">
           <p className="text-lg leading-relaxed text-foreground/85">
             I'm a Computer Science Engineering student specializing in{" "}
             <span className="text-[color:var(--aurora-blue)]">Artificial Intelligence</span> and{" "}
@@ -391,7 +358,7 @@ function Motherboard() {
             technologies, and shipping solutions that solve real-world problems. I constantly explore
             emerging tech and believe innovation begins with curiosity and continuous learning.
           </p>
-          <div className="grid grid-cols-2 gap-3 pt-2 text-sm">
+          <div className="grid grid-cols-2 gap-3 pt-2 text-sm sm:grid-cols-3">
             {MB_COMPONENTS.map((c) => (
               <div key={c.name} className="flex items-center gap-2 rounded-lg glass px-3 py-2">
                 <c.icon className="h-4 w-4" style={{ color: c.tint }} />
@@ -400,7 +367,6 @@ function Motherboard() {
             ))}
           </div>
         </div>
-      </div>
     </Section>
   );
 }
