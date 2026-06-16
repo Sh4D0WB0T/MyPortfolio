@@ -80,11 +80,9 @@ function Section({
 const NAV = [
   { id: "neural", label: "Neural Core" },
   { id: "identity", label: "Identity" },
-  { id: "motherboard", label: "Motherboard" },
+  { id: "about", label: "About Me" },
   { id: "universe", label: "Universe" },
   { id: "lab", label: "Lab" },
-  { id: "cyber", label: "Cyber" },
-  { id: "evolution", label: "Evolution" },
   { id: "experience", label: "Experience" },
   { id: "certs", label: "Certs" },
   { id: "metrics", label: "Metrics" },
@@ -210,7 +208,10 @@ function Hero({ onRecruiter }: { onRecruiter: () => void }) {
             View Projects
           </a>
           <a
-            href="mailto:aaishaverma5351@gmail.com?subject=Resume%20Request"
+            href="/cv.pdf"
+            download="Aaisha-Verma-CV.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:border-[color:var(--aurora-green)]"
           >
             <Download className="h-4 w-4" /> Download CV
