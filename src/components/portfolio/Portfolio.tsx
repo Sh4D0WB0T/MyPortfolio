@@ -1171,8 +1171,8 @@ const TERMINAL_RESPONSES: Record<string, string | string[]> = {
   whoami: "aaisha@aurora-nexus:~$ 4th-year CSE (AI & ML) student · Jamshedpur, India",
   skills: "Python · Java · JavaScript · C# · .NET · FastAPI · ML · SQL · Power BI · Git · Cybersecurity",
   projects: [
-    "AI-001 Vendor Tracking System  [Successful]",
-    "AI-002 Sales Analytics Dashboard [Successful]",
+    "AI-001 OnlyDesign · ShareOn       [Deployed]",
+    "AI-002 PromptTester App           [Completed]",
     "AI-003 Password Strength Analyzer [Deployed]",
     "AI-004 Simplified Trading Bot     [Completed]",
     "AI-005 BlackHawk AI               [In Development · Flagship]",
