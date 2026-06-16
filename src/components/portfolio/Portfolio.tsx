@@ -16,7 +16,6 @@ import {
   Sparkles,
   Atom,
   Zap,
-  Lock,
   Code2,
   GraduationCap,
   MapPin,
@@ -80,11 +79,9 @@ function Section({
 const NAV = [
   { id: "neural", label: "Neural Core" },
   { id: "identity", label: "Identity" },
-  { id: "motherboard", label: "Motherboard" },
+  { id: "about", label: "About Me" },
   { id: "universe", label: "Universe" },
   { id: "lab", label: "Lab" },
-  { id: "cyber", label: "Cyber" },
-  { id: "evolution", label: "Evolution" },
   { id: "experience", label: "Experience" },
   { id: "certs", label: "Certs" },
   { id: "metrics", label: "Metrics" },
@@ -210,7 +207,10 @@ function Hero({ onRecruiter }: { onRecruiter: () => void }) {
             View Projects
           </a>
           <a
-            href="mailto:aaishaverma5351@gmail.com?subject=Resume%20Request"
+            href="/cv.pdf"
+            download="Aaisha-Verma-CV.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:border-[color:var(--aurora-green)]"
           >
             <Download className="h-4 w-4" /> Download CV
@@ -335,49 +335,16 @@ const MB_COMPONENTS = [
   { icon: Cloud, name: "Cloud Engine", role: "Infrastructure", tint: "var(--sakura-pink)" },
 ];
 
-function Motherboard() {
+function AboutMe() {
   return (
     <Section
-      id="motherboard"
+      id="about"
       number="03"
-      label="Engineering Motherboard"
-      title={<>Inside the <span className="text-gradient-aurora">engineer.</span></>}
+      label="About Me"
+      title={<>About <span className="text-gradient-aurora">me.</span></>}
+      subtitle="The systems, ideas, and obsessions inside the engineer."
     >
-      <div className="grid gap-10 md:grid-cols-2">
-        <div className="relative">
-          <div className="relative aspect-square rounded-3xl glass p-6">
-            <div className="absolute inset-6 grid grid-cols-3 grid-rows-3 gap-3">
-              {MB_COMPONENTS.map((c, i) => (
-                <motion.div
-                  key={c.name}
-                  initial={{ opacity: 0, scale: 0.7 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="group relative flex flex-col items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] p-3 transition hover:border-white/40"
-                >
-                  <c.icon className="h-6 w-6" style={{ color: c.tint }} />
-                  <div className="mt-2 text-[10px] uppercase tracking-widest text-muted-foreground group-hover:text-foreground">
-                    {c.name}
-                  </div>
-                  <div
-                    className="absolute -inset-px rounded-xl opacity-0 transition group-hover:opacity-100"
-                    style={{ boxShadow: `inset 0 0 30px ${c.tint}` }}
-                  />
-                </motion.div>
-              ))}
-            </div>
-            <div
-              className="pointer-events-none absolute inset-0 rounded-3xl"
-              style={{
-                background:
-                  "radial-gradient(circle at center, rgba(125,211,252,0.08), transparent 65%)",
-              }}
-            />
-          </div>
-        </div>
-
-        <div className="space-y-6">
+        <div className="mx-auto max-w-3xl space-y-6">
           <p className="text-lg leading-relaxed text-foreground/85">
             I'm a Computer Science Engineering student specializing in{" "}
             <span className="text-[color:var(--aurora-blue)]">Artificial Intelligence</span> and{" "}
@@ -390,7 +357,7 @@ function Motherboard() {
             technologies, and shipping solutions that solve real-world problems. I constantly explore
             emerging tech and believe innovation begins with curiosity and continuous learning.
           </p>
-          <div className="grid grid-cols-2 gap-3 pt-2 text-sm">
+          <div className="grid grid-cols-2 gap-3 pt-2 text-sm sm:grid-cols-3">
             {MB_COMPONENTS.map((c) => (
               <div key={c.name} className="flex items-center gap-2 rounded-lg glass px-3 py-2">
                 <c.icon className="h-4 w-4" style={{ color: c.tint }} />
@@ -399,7 +366,6 @@ function Motherboard() {
             ))}
           </div>
         </div>
-      </div>
     </Section>
   );
 }
@@ -562,19 +528,35 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     id: "AI-001",
-    title: "Vendor Tracking System",
-    objective: "Vendor registration and workflow tracking platform.",
-    tech: ["Web Technologies", "DBMS", "SQL"],
-    status: "Successful",
-    impact: "Improved tracking and monitoring of vendor workflows.",
+    title: "OnlyDesign · ShareOn",
+    objective:
+      "A design-sharing social platform where creators showcase, share, and react to UI/UX work.",
+    tech: ["TypeScript", "React", "Vite", "Tailwind CSS"],
+    features: [
+      "Designer profiles & feeds",
+      "Upload and share UI works",
+      "Reactions and discovery",
+      "Responsive, modern UI",
+    ],
+    status: "Deployed",
+    impact: "Front-end product work focused on community-driven design sharing.",
+    github: "https://github.com/Sh4D0WB0T/onlydesignshareon",
   },
   {
     id: "AI-002",
-    title: "Sales Analytics Dashboard",
-    objective: "Compare business performance across India and Netherlands.",
-    tech: ["Power BI", "Data Analytics", "SQL"],
-    status: "Successful",
-    impact: "Created interactive business insights for cross-region performance.",
+    title: "PromptTester App",
+    objective:
+      "A playground for testing, comparing, and iterating on LLM prompts across models and parameters.",
+    tech: ["TypeScript", "React", "LLM APIs", "Prompt Engineering"],
+    features: [
+      "Multi-prompt testing",
+      "Side-by-side comparison",
+      "Parameter tuning",
+      "Reusable prompt templates",
+    ],
+    status: "Completed",
+    impact: "Speeds up prompt iteration and evaluation for AI workflows.",
+    github: "https://github.com/Sh4D0WB0T/PromptTesterApp",
   },
   {
     id: "AI-003",
@@ -723,114 +705,6 @@ function Lab() {
           </motion.article>
         ))}
       </div>
-    </Section>
-  );
-}
-
-/* --------------------------- 6. Cyber Command Center --------------------------- */
-
-function CyberCenter() {
-  const feed = [
-    { sev: "HIGH", msg: "Brute-force pattern detected · auth/login", color: "var(--cherry-rose)" },
-    { sev: "MED", msg: "Suspicious outbound WebSocket frame", color: "var(--champagne-gold)" },
-    { sev: "LOW", msg: "TLS handshake anomaly · region: APAC", color: "var(--aurora-blue)" },
-    { sev: "INFO", msg: "BlackHawk AI policy update v0.4.2 deployed", color: "var(--aurora-green)" },
-    { sev: "HIGH", msg: "Credential stuffing wave neutralized", color: "var(--cherry-rose)" },
-  ];
-  return (
-    <Section
-      id="cyber"
-      number="06"
-      label="Cyber Command Center"
-      title={<>A simulated <span className="text-gradient-aurora">SOC.</span></>}
-      subtitle="A snapshot of how I think about security — monitoring, signal, and response."
-    >
-      <div className="grid gap-6 md:grid-cols-3">
-        <div className="rounded-2xl glass p-6 md:col-span-2">
-          <div className="mb-4 flex items-center justify-between text-xs uppercase tracking-widest text-muted-foreground">
-            <span className="flex items-center gap-2">
-              <Activity className="h-4 w-4 text-[color:var(--aurora-green)]" /> Threat Feed · Live
-            </span>
-            <span className="status-online">Operational</span>
-          </div>
-          <ul className="space-y-3 font-mono text-sm">
-            {feed.map((f, i) => (
-              <li key={i} className="flex items-center gap-3">
-                <span
-                  className="rounded px-1.5 py-0.5 text-[10px] font-semibold"
-                  style={{ color: f.color, border: `1px solid ${f.color}44` }}
-                >
-                  {f.sev}
-                </span>
-                <span className="text-foreground/85">{f.msg}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="space-y-4">
-          {[
-            { icon: Shield, t: "Threat Intelligence", d: "OSINT pipelines, IoC enrichment" },
-            { icon: Lock, t: "Auth Hardening", d: "Password security & secure flows" },
-            { icon: Brain, t: "AI Analysis", d: "ML-driven anomaly detection" },
-          ].map((b) => (
-            <div key={b.t} className="rounded-xl glass p-4">
-              <div className="flex items-center gap-3">
-                <b.icon className="h-5 w-5 text-[color:var(--aurora-blue)]" />
-                <div>
-                  <div className="text-sm font-semibold">{b.t}</div>
-                  <div className="text-xs text-muted-foreground">{b.d}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </Section>
-  );
-}
-
-/* --------------------------- 7. Evolution Timeline --------------------------- */
-
-const EVOLUTION = [
-  { v: "v1.0", title: "Programming Foundations", note: "First lines of Python, Java, C#." },
-  { v: "v2.0", title: "Web Development Internship", note: "Academor — frontend craft." },
-  { v: "v3.0", title: "Data Analytics Exploration", note: "Cisco · Power BI dashboards." },
-  { v: "v4.0", title: "Cybersecurity Exploration", note: "Password security, threat modeling." },
-  { v: "v5.0", title: "AI Systems Development", note: "Agents, ML, BlackHawk AI." },
-  { v: "vFuture", title: "AI Security Architect", note: "Autonomous defense + AGI safety." },
-];
-
-function Evolution() {
-  return (
-    <Section
-      id="evolution"
-      number="07"
-      label="Engineer Evolution Timeline"
-      title={<>Shipped as <span className="text-gradient-aurora">versions.</span></>}
-    >
-      <ol className="relative space-y-6 border-l border-white/10 pl-6">
-        {EVOLUTION.map((e, i) => (
-          <motion.li
-            key={e.v}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.05 }}
-            className="relative"
-          >
-            <span
-              className="absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full"
-              style={{ background: i === EVOLUTION.length - 1 ? "var(--gradient-aurora)" : "var(--aurora-blue)", boxShadow: "0 0 12px var(--aurora-blue)" }}
-            />
-            <div className="flex flex-wrap items-baseline gap-x-3">
-              <span className="font-mono text-sm text-[color:var(--aurora-blue)]">AAISHA {e.v}</span>
-              <h3 className="text-lg font-semibold">{e.title}</h3>
-            </div>
-            <p className="text-sm text-muted-foreground">{e.note}</p>
-          </motion.li>
-        ))}
-      </ol>
     </Section>
   );
 }
@@ -1188,8 +1062,8 @@ const TERMINAL_RESPONSES: Record<string, string | string[]> = {
   whoami: "aaisha@aurora-nexus:~$ 4th-year CSE (AI & ML) student · Jamshedpur, India",
   skills: "Python · Java · JavaScript · C# · .NET · FastAPI · ML · SQL · Power BI · Git · Cybersecurity",
   projects: [
-    "AI-001 Vendor Tracking System  [Successful]",
-    "AI-002 Sales Analytics Dashboard [Successful]",
+    "AI-001 OnlyDesign · ShareOn       [Deployed]",
+    "AI-002 PromptTester App           [Completed]",
     "AI-003 Password Strength Analyzer [Deployed]",
     "AI-004 Simplified Trading Bot     [Completed]",
     "AI-005 BlackHawk AI               [In Development · Flagship]",
@@ -1301,11 +1175,9 @@ export function Portfolio() {
 
       <Hero onRecruiter={() => setRecruiter(true)} />
       <IdentityHologram />
-      <Motherboard />
+      <AboutMe />
       <Universe />
       <Lab />
-      <CyberCenter />
-      <Evolution />
       <Experience />
       <Certs />
       <Metrics />
