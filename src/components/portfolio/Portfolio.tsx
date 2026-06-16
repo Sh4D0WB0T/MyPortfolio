@@ -1284,11 +1284,9 @@ export function Portfolio() {
 
       <Hero onRecruiter={() => setRecruiter(true)} />
       <IdentityHologram />
-      <Motherboard />
+      <AboutMe />
       <Universe />
       <Lab />
-      <CyberCenter />
-      <Evolution />
       <Experience />
       <Certs />
       <Metrics />
