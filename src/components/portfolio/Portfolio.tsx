@@ -529,19 +529,35 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     id: "AI-001",
-    title: "Vendor Tracking System",
-    objective: "Vendor registration and workflow tracking platform.",
-    tech: ["Web Technologies", "DBMS", "SQL"],
-    status: "Successful",
-    impact: "Improved tracking and monitoring of vendor workflows.",
+    title: "OnlyDesign · ShareOn",
+    objective:
+      "A design-sharing social platform where creators showcase, share, and react to UI/UX work.",
+    tech: ["TypeScript", "React", "Vite", "Tailwind CSS"],
+    features: [
+      "Designer profiles & feeds",
+      "Upload and share UI works",
+      "Reactions and discovery",
+      "Responsive, modern UI",
+    ],
+    status: "Deployed",
+    impact: "Front-end product work focused on community-driven design sharing.",
+    github: "https://github.com/Sh4D0WB0T/onlydesignshareon",
   },
   {
     id: "AI-002",
-    title: "Sales Analytics Dashboard",
-    objective: "Compare business performance across India and Netherlands.",
-    tech: ["Power BI", "Data Analytics", "SQL"],
-    status: "Successful",
-    impact: "Created interactive business insights for cross-region performance.",
+    title: "PromptTester App",
+    objective:
+      "A playground for testing, comparing, and iterating on LLM prompts across models and parameters.",
+    tech: ["TypeScript", "React", "LLM APIs", "Prompt Engineering"],
+    features: [
+      "Multi-prompt testing",
+      "Side-by-side comparison",
+      "Parameter tuning",
+      "Reusable prompt templates",
+    ],
+    status: "Completed",
+    impact: "Speeds up prompt iteration and evaluation for AI workflows.",
+    github: "https://github.com/Sh4D0WB0T/PromptTesterApp",
   },
   {
     id: "AI-003",
